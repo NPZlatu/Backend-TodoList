@@ -5,6 +5,7 @@ __pycache__/
 *.pyd
 *.pyc
 
+
 # Django specific
 *.log
 *.pot
@@ -14,6 +15,7 @@ db.sqlite3-journal
 
 # Environment variables
 .env
+
 
 # Media files (optional, if you store user-uploaded files here)
 media/
