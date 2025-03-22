@@ -130,6 +130,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Adding the following lines to the settings.py file will configure the REST framework to use the JWT authentication scheme by default. 
+# This will require all views to be authenticated by default.
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
