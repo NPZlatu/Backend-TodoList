@@ -32,6 +32,7 @@ class LoginView(APIView):
     
 
 class LogoutView(APIView):
+    # IsAuthenticated permission class will require all views to be authenticated by default
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -47,6 +48,7 @@ class LogoutView(APIView):
 class TodoListCreateView(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
+    # IsAuthenticated permission class will require all views to be authenticated by default
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
@@ -56,6 +58,7 @@ class TodoListCreateView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user)
 
 class TodoDetailUpdateAndDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    # IsAuthenticated permission class will require all views to be authenticated by default
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
     permission_classes = [IsAuthenticated]
