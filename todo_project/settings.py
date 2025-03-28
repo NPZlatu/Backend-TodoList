@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+from datetime import timedelta
 
 # Load environment variables from .env file
 load_dotenv()
@@ -144,3 +145,9 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),      # Access token valid for 2 hours
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),      # Refresh token valid for 7 days
+}
