@@ -7,7 +7,7 @@ on:
 
 jobs:
   # Job for setting up the environment and running tests
-  test:
+  continuous-integration-tests:
     runs-on: ubuntu-latest
 
     steps:
