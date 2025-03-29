@@ -10,4 +10,4 @@ class TodoModelTestCase(TestCase):
 
     def test_todo_creation(self):
         todo = Todo.objects.create(user=self.user, title="Sample Todo", description="Sample Description")
-        self.assertEqual(todo.title, "Sample Todo")
+        self.assertEqual(todo.title, "Sample Todo Wrong")
