@@ -41,9 +41,9 @@ jobs:
       # Run unit tests
       - name: Run unit tests
         run: |
-          python manage.py test todo.tests.unit --settings=todo.settings.test
+          python manage.py test todo.tests.unit
 
       # Run integration tests (if they are in a separate directory or file)
       - name: Run integration tests
         run: |
-          python manage.py test todo.tests.integration --settings=todo.settings.test
+          python manage.py test todo.tests.integration
