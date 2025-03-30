@@ -1,11 +1,10 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "requirements.txt",
-      "use": "@vercel/python",
-      "config": {
-        "buildCommand": "pip install --upgrade pip setuptools wheel && pip install -v -r requirements.txt"
-      }
+      "src": "manage.py",
+      "use": "@vercel/python"
     }
-  ]
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "manage.py" }]
 }
