@@ -1,20 +1,18 @@
 {
-  "framework": null,
+  "version": 2,
   "builds": [
     {
       "src": "todo_project/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "todo_project/wsgi.py",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE, PUT"
-      }
+      "dest": "todo_project/wsgi.py"
     }
   ]
 }
