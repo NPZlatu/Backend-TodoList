@@ -94,11 +94,20 @@ if ENVIRONMENT == 'local':
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-elif ENVIRONMENT == 'production': #needs to be set up
+# for vercel deployment
+elif ENVIRONMENT == 'production':
+    #setup postgresql database
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT'),
+            'OPTIONS': {
+            'sslmode': 'require',
+            }
         }
     }
 
@@ -154,7 +163,26 @@ REST_FRAMEWORK = {
     ],
 }
 
+ALLOWED_HOSTS = ['*'] 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'authorization',
+    'content-type',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 
 SIMPLE_JWT = {
