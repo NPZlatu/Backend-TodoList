@@ -1,10 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "manage.py",
-      "use": "@vercel/python"
+  "functions": {
+    "vercel_handler.py": {
+      "runtime": "python3.12"
     }
-  ],
-  "routes": [{ "src": "/(.*)", "dest": "manage.py" }]
+  }
 }
