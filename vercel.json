@@ -4,7 +4,7 @@
       "src": "requirements.txt",
       "use": "@vercel/python",
       "config": {
-        "buildCommand": "pip install --upgrade pip setuptools wheel && pip install -r requirements.txt"
+        "buildCommand": "pip install --upgrade pip setuptools wheel && pip install -v -r requirements.txt"
       }
     }
   ]
