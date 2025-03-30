@@ -105,6 +105,9 @@ elif ENVIRONMENT == 'production':
             'PASSWORD': os.getenv('DB_PASSWORD'),
             'HOST': os.getenv('DB_HOST'),
             'PORT': os.getenv('DB_PORT'),
+            'OPTIONS': {
+            'sslmode': 'require',
+            }
         }
     }
 
@@ -180,6 +183,7 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
+
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),      # Access token valid for 2 hours
