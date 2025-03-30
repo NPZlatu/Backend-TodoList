@@ -94,6 +94,7 @@ if ENVIRONMENT == 'local':
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+# for vercel deployment
 elif ENVIRONMENT == 'production':
     #setup postgresql database
     DATABASES = {
