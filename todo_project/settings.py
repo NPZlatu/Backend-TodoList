@@ -94,11 +94,16 @@ if ENVIRONMENT == 'local':
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-elif ENVIRONMENT == 'production': #needs to be set up
+elif ENVIRONMENT == 'production':
+    #setup postgresql database
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT'),
         }
     }
 
