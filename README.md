@@ -22,7 +22,7 @@ This API was created as part of Assignment 1 for my CI/CD course. I am currently
 ## Demo
 
 A live API demo is available here:
-[Live API Demo](#https://backend-todo-list-btp5n3r8h-niraj-paudels-projects.vercel.app/)
+[Live API Demo](https://backend-todo-list-btp5n3r8h-niraj-paudels-projects.vercel.app/)
 
 ## Installation
 
